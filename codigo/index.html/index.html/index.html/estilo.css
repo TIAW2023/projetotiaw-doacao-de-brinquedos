@@ -1,0 +1,165 @@
+
+/* navbar e carrossel */
+@media (min-width: 300px) and (max-width: 800px) {
+  .navbar {
+    position: relative;
+  }
+}
+
+.navbar-brand img{
+  padding-left: 5px;
+}
+
+@media(min-width: 300px) and (max-width: 800px){
+  .navbar-brand img {
+    width: auto;
+    height: auto;
+  }
+}
+.container-fluid {
+    padding: 0;
+}
+.carousel-inner img {         
+    height: 45vw;
+} 
+
+@media (min-width: 300px) and (max-width: 800px)
+{
+
+  .carousel-inner  img {
+        width: auto;
+        height: 300px;       
+    }
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: linear-gradient(320deg,#FFF229, orange, #6BBDD7 );
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  .column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+  }
+  
+  .about-section {
+    padding: 50px;
+    text-align: center;
+  /*  background: linear-gradient(320deg,#FFF229, orange, #6BBDD7 ); */
+    color: black;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+  
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+
+.text-end img {
+  width: 300px;
+  padding: 10px;
+}
+
+
+
+@media (min-width: 300px) and (max-width: 800px){
+
+  .carousel-indicators {
+        display: none;
+  }
+
+}
+/* Rodapé */
+a:hover{
+  text-decoration:none;
+}
+.section-padding {
+padding: 60px 0;
+}
+.bottom {
+ /* background: linear-gradient(320deg, #6BBDD7, orange, #FFF229); */
+}
+.bottom .copyright {
+  color: #e5e5e5;
+  font-weight: 600;
+}
+.copyright a {
+  color: #f2ff49;
+  margin-left: 3px;
+  padding-right: 3px;
+}
+.bottom p {
+  margin-bottom: 0;
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.copyright p span {
+  color: #d1caca;
+}
+.bottom .copyright p, .bottom .copyright a:hover{
+  color: #6c6d83;
+}
+
+@media (min-width: 300px) and (max-width: 800px){
+
+  .copyright {
+    padding: 0px;
+    line-height: 1px;
+    font-size: 5px;
+    
+  }
+
+}
+
+.dropdown-menu {
+  background:linear-gradient(320deg,#FFF229, orange); 
+}
+
