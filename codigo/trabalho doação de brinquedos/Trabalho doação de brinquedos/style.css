@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(255, 191, 71) ;
+   
+} 
+
+nav {
+      background: rgb(255, 255, 60);
+} 
+
+/* INFORMAÇÕES DE CAPANHAS*/
+center{
+    background: linear-gradient(320deg, #FFF229, orange, #6BBDD7
+    );
+}
+li{
+    list-style: none;
+}
+/* INFORMAÇÕES DE CAPANHAS*/
+#saibamais{
+color: orange;
+}
+
