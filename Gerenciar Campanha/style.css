@@ -1,0 +1,43 @@
+header{
+  background: linear-gradient(320deg,yellow,orange);
+}
+body{
+  background:linear-gradient(320deg,yellow,orange);;
+}
+
+.bt{
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0D6EFD;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+#icone{
+  padding-top: 11px;
+  
+}
+
+@media screen and (min-width: 300px) and (max-width:800px){
+#funciona{
+    padding: 20px;
+  }
+  .card{
+    width: 5px;
+    height: auto;
+  }
+ .bt{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0D6EFD;
+    color: #FFFFFF;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+ }
+}
+@media screen and  (min-width: 820px) and (max-width: 1368px){
+  #funciona{
+    padding-top: 600px;
+    
+  }
+}
