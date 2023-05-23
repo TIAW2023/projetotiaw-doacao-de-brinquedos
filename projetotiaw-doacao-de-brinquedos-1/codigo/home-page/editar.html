@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="user.js"></script>
+    <link rel="stylesheet" type="text/css" href="usuario.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+<!------ Include the above in your HEAD tag ---------->
+
+<!--
+User Profile Sidebar by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+-->
+
+<div class="container">
+    <div class="row profile">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						Teste
+					</div>
+					<div class="profile-usertitle-job">
+						Teste
+					</div>
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR BUTTONS -->
+				
+				<!-- END SIDEBAR BUTTONS -->
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usermenu">
+					<ul class="nav">
+						<li>
+							<a href="usuario.html">
+							<i class="glyphicon glyphicon-home"></i>
+							Meu Perfil </a>
+						</li>
+						<li class="active">
+							<a href="editar.html">
+							<i class="glyphicon glyphicon-user"></i>
+							Editar Peril </a>
+						</li>
+						
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+		<div class="col-md-9">
+            <div class="profile-content">
+                <h3>Edite a sua foto de perfil</h3>
+                <form action="/action_page.php">
+                  <label for="myfile">Select a file:</label>
+                  <input type="file" id="myfile" name="myfile"><br><br>
+                  <input type="submit">
+                </form>
+
+                <div class="input-group">
+                    <span class="input-group-text">Modifique o seu nome</span>
+                    <input type="text" aria-label="First name" placeholder="Nome" class="form-control">
+                  </div>
+
+                  <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Altere a sua senha</span>
+                    <input type="text" class="form-control" placeholder="Senha" aria-label="Username" aria-describedby="addon-wrapping">
+                  </div>
+            </div>        
+		</div>
+	</div>     
+</div>
+</body>
+</html>
