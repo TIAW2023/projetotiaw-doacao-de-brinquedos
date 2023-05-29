@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="user.js"></script>
-    <link rel="stylesheet" type="text/css" href="usuario.css">
+    <link rel="stylesheet" type="text/css" href="editar.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -29,7 +29,7 @@ Licensed under MIT
 			<div class="profile-sidebar">
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic">
-					<img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+					<img id= "foto" src="person-circle (1).svg" class="img-responsive" alt="">
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
@@ -65,13 +65,12 @@ Licensed under MIT
 			</div>
 		</div>
 		<div class="col-md-9">
-            <div class="profile-content">
-                <h3>Edite a sua foto de perfil</h3>
-                <form action="/action_page.php">
-                  <label for="myfile">Select a file:</label>
-                  <input type="file" id="myfile" name="myfile"><br><br>
-                  <input type="submit">
-                </form>
+			<label class="picture" for="picture__input" tabIndex="0">
+				<span class="picture__image"></span>
+			  </label>
+			  
+			  <input type="file" name="picture__input" id="picture__input">
+			  
 
                 <div class="input-group">
                     <span class="input-group-text">Modifique o seu nome</span>
