@@ -1,0 +1,13 @@
+li{
+    list-style: none;
+}
+body{
+    background: #f3e99f;
+}
+
+@media(min-width: 300px) and (max-width: 943px) {
+    img{
+        margin-top: 20px;
+        width: 100%;
+    }
+}
