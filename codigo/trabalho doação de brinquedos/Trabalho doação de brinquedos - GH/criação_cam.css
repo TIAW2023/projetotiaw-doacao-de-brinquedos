@@ -1,0 +1,58 @@
+Body{
+   background: #f7d060;
+}
+
+ /* BARRA DE NAVEGAÇÃO */
+nav{
+  background:  #ff6d60;
+}
+ /* BARRA DE NAVEGAÇÃO */
+ 
+#cardchecks{
+   border-left-color: black;
+   border-top-color: black;
+   border-right-color: black;
+   border-bottom-color:  black;
+}
+
+#comment{
+   border-left-color: black;
+   border-top-color: black;
+   border-right-color: black;
+   border-bottom-color:  black;
+}
+#Endereço{
+   border-left-color: black;
+   border-top-color: black;
+   border-right-color: black;
+   border-bottom-color:  black;
+}
+
+#Telefone{
+   border-left-color: black;
+   border-top-color: black;
+   border-right-color: black;
+   border-bottom-color:  black;
+}
+
+#email{
+   border-left-color: black;
+   border-top-color: black;
+   border-right-color: black;
+   border-bottom-color:  black;
+}
+
+#criar{
+   background: #98d8aa;
+   border-left-color: black;
+  border-top-color: black;
+  border-right-color: black;
+  border-bottom-color:  black;
+}
+
+#img{
+   border-left-color: black;
+  border-top-color: black;
+  border-right-color: black;
+  border-bottom-color:  black;
+}
