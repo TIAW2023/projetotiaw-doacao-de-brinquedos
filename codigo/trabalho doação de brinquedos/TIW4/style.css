@@ -1,0 +1,68 @@
+
+body{
+    background:  #f7d060;
+}
+
+/*BARRA DE NAVEGAÇÃO */
+nav{
+    background: #ff6d60;
+    }
+ /* BARRA DE NAVEGAÇÃO */
+
+
+/* CHECKS*/
+#cardchecks{
+    background: #f3e99f;
+    border-left-color: black;
+    border-top-color: black;
+    border-right-color: black;
+    border-bottom-color:  black;
+}
+/* CHECKS*/
+
+/* CARD */
+#cardcampanha{
+    background: #f3e99f;
+    border-left-color: black;
+    border-top-color: black;
+    border-right-color: black;
+    border-bottom-color:  black;
+}
+
+#Saiba{
+    background: #98d8aa;
+    border-left-color: black;
+   border-top-color: black;
+   border-right-color: black;
+   border-bottom-color:  black;
+}
+
+/* CARD*/
+
+/* CRIAR CAMPANHA*/
+#criar {
+    background: #f3e99f;
+    border-left-color: black;
+    border-top-color: black;
+    border-right-color: black;
+    border-bottom-color:  black;
+}
+
+#criarcam{
+    background: #98d8aa;
+    border-left-color: black;
+    border-top-color: black;
+    border-right-color: black;
+    border-bottom-color:  black;
+}
+
+@media ( min-width: 300px) and ( max-width: 800px){
+    #cardcampanha{
+        margin-top: 20px;
+        width: 100%;
+    }
+    #criar{
+        margin-top: 20px;
+        width: 100%;
+    }
+}
