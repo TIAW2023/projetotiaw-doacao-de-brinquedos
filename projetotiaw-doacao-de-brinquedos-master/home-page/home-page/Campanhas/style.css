@@ -1,0 +1,77 @@
+
+html {
+    min-height: 100%;
+    max-width: 100%;} 
+body {
+    min-height: 100%;
+    max-width: 100%;
+    background: linear-gradient(320deg,#198d9c, rgba(30, 240, 240, 0.849));
+    margin: 0 auto;
+}
+
+@media ( min-width: 300px) and ( max-width: 800px){
+    #cardcampanha{
+        margin-top: 20px;
+        width: 100%;
+    }
+    #criar{
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+/*BARRA DE NAVEGAÇÃO */
+
+ /* BARRA DE NAVEGAÇÃO */
+
+
+/* CHECKS*/
+#cardchecks{
+    background: #f5eba0;
+    border-left-color: black;
+    border-top-color: black;
+    border-right-color: black;
+    border-bottom-color:  black;
+    
+}
+/* CHECKS*/
+
+/* CARD */
+#cardcampanha{
+    background: #f3e99f;
+    border-left-color: black;
+    border-top-color: black;
+    border-right-color: black;
+    border-bottom-color:  black;
+
+}
+
+#Saiba{
+    background: #98d8aa;
+    border-left-color: black;
+   border-top-color: black;
+   border-right-color: black;
+   border-bottom-color:  black;
+}
+
+/* CARD*/
+
+/* CRIAR CAMPANHA*/
+#criar {
+    background: #f3e99f;
+    border-left-color: black;
+    border-top-color: black;
+    border-right-color: black;
+    border-bottom-color:  black;
+}
+
+#criarcam{
+    background: #98d8aa;
+    border-left-color: black;
+    border-top-color: black;
+    border-right-color: black;
+    border-bottom-color:  black;
+}
+/* CRIAR CAMPANHA*/
+
+
