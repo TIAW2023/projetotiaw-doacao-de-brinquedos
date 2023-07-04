@@ -1,90 +1,78 @@
 
-const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
-
-const fotoInput = document.getElementById('picture__input');
-const nomeInput = document.getElementById('nomeInput');
-const senhaInput = document.getElementById('senhaInput');
-const fotoUsuario = document.getElementById('foto');
-const salvarButton = document.getElementById('salvarButton');
-const selecionarFotoButton = document.getElementById('selecionarFotoButton');
+var nomeInput = document.getElementById("nomeInput");
+var senhaInput = document.getElementById("senhaInput");
 
 
-function getDadosUsuario() {
-  const usuarioAtual = localStorage.getItem('usuarioAtual');
-  return usuarios[usuarioAtual] || {
-    foto: 'usuario.png',
-    nome: 'Usuário',
-    senha: ''
+var Pessoa = JSON.parse(localStorage.getItem('dbpessoa'));
+
+
+var indiceUsuarioAtual = 0; 
+
+
+function preencherPerfil() {
+  var usuarioAtual = Pessoa[indiceUsuarioAtual];
+  nomeInput.value = usuarioAtual.nome;
+  senhaInput.value = usuarioAtual.senha;
+}
+
+
+function salvarAlteracoes() {
+  var usuarioAtual = Pessoa[indiceUsuarioAtual];
+  usuarioAtual.nome = nomeInput.value;
+  usuarioAtual.senha = senhaInput.value;
+  localStorage.setItem('dbpessoa', JSON.stringify(Pessoa));
+  alert("Alterações salvas com sucesso!");
+}
+
+
+var salvarButton = document.getElementById("salvarButton");
+salvarButton.addEventListener("click", salvarAlteracoes);
+
+window.addEventListener("load", preencherPerfil);
+
+
+
+
+function exibirFotoSelecionada(event) {
+  var foto = document.getElementById("foto");
+  var fotoSelecionada = event.target.files[0];
+  var reader = new FileReader();
+
+  reader.onload = function(e) {
+    foto.src = e.target.result;
   };
-}
 
-function salvarDadosUsuario(dados) {
-  const usuarioAtual = localStorage.getItem('usuarioAtual');
-  usuarios[usuarioAtual] = dados;
-  localStorage.setItem('usuarios', JSON.stringify(usuarios));
+  reader.readAsDataURL(fotoSelecionada);
 }
 
 
-const dadosUsuario = getDadosUsuario();
-fotoUsuario.src = dadosUsuario.foto;
-nomeInput.value = dadosUsuario.nome;
-senhaInput.value = dadosUsuario.senha;
-
-
-function exibirOcultarBotaoSelecionarFoto() {
-  if (dadosUsuario.foto === 'usuario.png') {
-    selecionarFotoButton.style.display = 'block';
-  } else {
-    selecionarFotoButton.style.display = 'none';
-  }
+function preencherPerfil() {
+  var usuarioAtual = Pessoa[indiceUsuarioAtual];
+  nomeInput.value = usuarioAtual.nome;
+  senhaInput.value = usuarioAtual.senha;
+  foto.src = usuarioAtual.foto || "usuario.png"; // Exibe a foto do usuário ou a imagem padrão
 }
 
 
-window.addEventListener('DOMContentLoaded', () => {
-  fotoUsuario.src = 'usuario.png';
-});
+function salvarAlteracoes() {
+  var usuarioAtual = Pessoa[indiceUsuarioAtual];
+  usuarioAtual.nome = nomeInput.value;
+  usuarioAtual.senha = senhaInput.value;
 
-
-fotoInput.addEventListener('change', () => {
-  const fotoSelecionada = fotoInput.files[0];
+  // Verifica se uma nova foto foi selecionada
+  var fotoSelecionada = document.getElementById("picture__input").files[0];
   if (fotoSelecionada) {
-    const fotoURL = URL.createObjectURL(fotoSelecionada);
-    fotoUsuario.src = fotoURL;
- 
-    dadosUsuario.foto = fotoURL;
-    salvarDadosUsuario(dadosUsuario);
-    exibirOcultarBotaoSelecionarFoto();
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      usuarioAtual.foto = e.target.result;
+      localStorage.setItem('dbpessoa', JSON.stringify(Pessoa));
+      foto.src = usuarioAtual.foto;
+      alert("Alterações salvas com sucesso!");
+    };
+    reader.readAsDataURL(fotoSelecionada);
+  } else {
+    localStorage.setItem('dbpessoa', JSON.stringify(Pessoa));
+    alert("Alterações salvas com sucesso!");
   }
-});
+}
 
-
-fotoUsuario.addEventListener('click', () => {
-  fotoInput.click(); 
-});
-
-
-salvarButton.addEventListener('click', () => {
-
-  const novoNome = nomeInput.value;
-  const novaSenha = senhaInput.value;
-
- 
-  dadosUsuario.nome = novoNome;
-  dadosUsuario.senha = novaSenha;
-  salvarDadosUsuario(dadosUsuario);
-
-
-  fotoInput.value = '';
-  nomeInput.value = '';
-  senhaInput.value = '';
-
-
-  const nomeUsuario = document.getElementById('nomeUsuario');
-  nomeUsuario.textContent = novoNome;
-
-
-  console.log(dadosUsuario);
-});
-
-
-exibirOcultarBotaoSelecionarFoto();

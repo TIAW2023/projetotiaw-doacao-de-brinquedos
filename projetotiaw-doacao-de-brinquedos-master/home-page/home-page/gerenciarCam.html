@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="user.js"></script>
+    <link rel="stylesheet" type="text/css" href="usuario.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Gerenciar Campanhas</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row profile">
+            <div class="col-md-3">
+                <div class="profile-sidebar">
+                    <div class="profile-usermenu">
+                        <ul class="nav">
+                            <li class="active">
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-home"></i>
+                                    Gerenciar Campanha
+                                </a>
+                            </li>
+                            <li>
+                                <a href="editarPerfil.html">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    Editar Perfil
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="profile-content">
+                    <h2>Gerenciar Campanhas</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Descrição</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="campanhas-list">
+                            <!-- Aqui as linhas da tabela serão geradas dinamicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2>Novo Cliente</h2>
+                <span class="modal-close" id="modalClose">&#10006;</span>
+            </header>
+            <form class="modal-form">
+                <input type="text" class="modal-field" placeholder="Título">
+                <input type="text" class="modal-field" placeholder="Descrição da campanha">
+                <input type="text" class="modal-field" placeholder="História">
+                <input type="email" class="modal-field" placeholder="e-mail">
+                <input type="text" class="modal-field" placeholder="Telefone">
+                <input type="text" class="modal-field" placeholder="Endereço">
+            </form>
+            <footer class="modal-footer">
+                <button class="button green">Salvar</button>
+                <button class="button blue">Cancelar</button>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Função para carregar as campanhas do armazenamento local e exibir na tabela
+        function carregarCampanhas() {
+            var CAMPANHAS = localStorage.getItem("CAMPANHAS");
+            var CAMPANHASArray = CAMPANHAS ? JSON.parse(CAMPANHAS) : [];
+    
+            var campanhasList = document.getElementById("campanhas-list");
+    
+            for (var i = 0; i < CAMPANHASArray.length; i++) {
+                var campanha = CAMPANHASArray[i];
+    
+                var tr = document.createElement("tr");
+    
+                var tdTitle = document.createElement("td");
+                tdTitle.textContent = campanha.title;
+    
+                var tdDescription = document.createElement("td");
+                tdDescription.textContent = campanha.comment;
+    
+                var tdActions = document.createElement("td");
+    
+                var editButton = document.createElement("button");
+                editButton.className = "btn btn-primary";
+                editButton.textContent = "Editar";
+                editButton.addEventListener("click", (function (index) {
+                    return function () {
+                        editarCampanha(index);
+                    };
+                })(i));
+    
+                var deleteButton = document.createElement("button");
+                deleteButton.className = "btn btn-danger";
+                deleteButton.textContent = "Excluir";
+                deleteButton.addEventListener("click", (function (index) {
+                    return function () {
+                        excluirCampanha(index);
+                    };
+                })(i));
+    
+                tdActions.appendChild(editButton);
+                tdActions.appendChild(deleteButton);
+    
+                tr.appendChild(tdTitle);
+                tr.appendChild(tdDescription);
+                tr.appendChild(tdActions);
+    
+                campanhasList.appendChild(tr);
+            }
+        }
+    
+        // Função para excluir uma campanha com base no índice fornecido
+        function excluirCampanha(index) {
+            var CAMPANHAS = localStorage.getItem("CAMPANHAS");
+            var CAMPANHASArray = CAMPANHAS ? JSON.parse(CAMPANHAS) : [];
+    
+            if (index >= 0 && index < CAMPANHASArray.length) {
+                CAMPANHASArray.splice(index, 1);
+                localStorage.setItem("CAMPANHAS", JSON.stringify(CAMPANHASArray));
+                location.reload(); // Recarrega a página para atualizar a tabela
+            }
+        }
+    
+        // Função para editar uma campanha com base no índice fornecido
+        function editarCampanha(index) {
+            var CAMPANHAS = localStorage.getItem("CAMPANHAS");
+            var CAMPANHASArray = CAMPANHAS ? JSON.parse(CAMPANHAS) : [];
+    
+            if (index >= 0 && index < CAMPANHASArray.length) {
+                editButton.addEventListener('click',openModal);
+                console.log("Editar campanha de índice: " + index);
+            }
+        }
+    
+        // Carregar as campanhas ao carregar a página
+        document.addEventListener("DOMContentLoaded", function () {
+            carregarCampanhas();
+        });
+    </script>
+</body>
+</html>

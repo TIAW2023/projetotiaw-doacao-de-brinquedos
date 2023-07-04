@@ -5,7 +5,7 @@ html {
 body {
     min-height: 100%;
     max-width: 100%;
-    background: linear-gradient(320deg,#FFF229, orange, #6BBDD7);
+    background: linear-gradient(320deg,rgba(51, 180, 180, 0.849),#A66AE2 );
     margin: 0 auto;
 }
 
@@ -19,3 +19,4 @@ body {
         width: 100%;
     }
 }
+

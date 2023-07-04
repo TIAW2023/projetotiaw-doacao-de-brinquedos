@@ -1,51 +1,25 @@
-Body{
-   background: #f7d060;
+html {
+   min-height: 100%;
+   max-width: 100%;} 
+body {
+   min-height: 100%;
+   max-width: 100%;
+   background: linear-gradient(320deg,rgba(51, 180, 180, 0.849),#A66AE2 );
+   margin: 0 auto;
 }
 
- /* BARRA DE NAVEGAÇÃO */
-nav{
-  background:  #ff6d60;
+@media ( min-width: 300px) and ( max-width: 800px){
+   #img{
+       margin-top: 20px;
+       width: 100%;
+   }
+  
 }
- /* BARRA DE NAVEGAÇÃO */
- 
-#cardchecks{
+
+#criar {
+   background: #4411bd8f;
    border-left-color: black;
    border-top-color: black;
    border-right-color: black;
    border-bottom-color:  black;
-}
-
-#comment{
-   border-left-color: black;
-   border-top-color: black;
-   border-right-color: black;
-   border-bottom-color:  black;
-}
-#Endereço{
-   border-left-color: black;
-   border-top-color: black;
-   border-right-color: black;
-   border-bottom-color:  black;
-}
-
-#Telefone{
-   border-left-color: black;
-   border-top-color: black;
-   border-right-color: black;
-   border-bottom-color:  black;
-}
-
-#email{
-   border-left-color: black;
-   border-top-color: black;
-   border-right-color: black;
-   border-bottom-color:  black;
-}
-
-#criar{
-   background: #98d8aa;
-   border-left-color: black;
-  border-top-color: black;
-  border-right-color: black;
-  border-bottom-color:  black;
 }

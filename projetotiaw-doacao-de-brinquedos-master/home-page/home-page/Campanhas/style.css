@@ -5,7 +5,7 @@ html {
 body {
     min-height: 100%;
     max-width: 100%;
-    background: linear-gradient(320deg,#198d9c, rgba(30, 240, 240, 0.849));
+    background: linear-gradient(320deg,rgba(51, 180, 180, 0.849),#A66AE2 );
     margin: 0 auto;
 }
 
@@ -38,7 +38,7 @@ body {
 
 /* CARD */
 #cardcampanha{
-    background: #f3e99f;
+    
     border-left-color: black;
     border-top-color: black;
     border-right-color: black;
@@ -47,11 +47,11 @@ body {
 }
 
 #Saiba{
-    background: #98d8aa;
+    background: #4411bd8f;
     border-left-color: black;
-   border-top-color: black;
-   border-right-color: black;
-   border-bottom-color:  black;
+    border-top-color: black;
+    border-right-color: black;
+    border-bottom-color:  black;
 }
 
 /* CARD*/
@@ -66,11 +66,11 @@ body {
 }
 
 #criarcam{
-    background: #98d8aa;
-    border-left-color: black;
-    border-top-color: black;
-    border-right-color: black;
-    border-bottom-color:  black;
+    background: #4411bd8f;
+    border-left-color: rgb(0, 26, 65);
+    border-top-color: rgb(0, 26, 65);
+    border-right-color: rgb(0, 26, 65);
+    border-bottom-color:  rgb(0, 26, 65);
 }
 /* CRIAR CAMPANHA*/
 

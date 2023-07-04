@@ -25,6 +25,7 @@
          var email = document.getElementById("email").value;
          var telefone = document.getElementById("telefone").value;
          var buscarcep = document.getElementById("buscarcep").value;
+        
 
  
          // Salvar dados no localStorage
@@ -39,7 +40,8 @@
            email: email,
            telefone: telefone,
            buscarcep: buscarcep,
-           Endereço: Endereço
+           Endereço: Endereço,
+           
          });
          localStorage.setItem("CAMPANHAS", JSON.stringify(CAMPANHASArray));
  
@@ -57,6 +59,20 @@
            alert("Preencha todos os campos obrigatórios.");
            return;
          }
+         // FILTRO 
+         var filtro = document.getElementById("filtroExibicao").value;
+      var campanha = {
+      filtro: filtro
+  };
+
+ //Salvar campanha no localStorage
+ // var campanhas = JSON.parse(localStorage.getItem("campanhas")) || [];
+ // campanhas.push(campanha);
+ // localStorage.setItem("campanhas", JSON.stringify(campanhas));
+
+  window.location.href = "campanhas.html";
+
+         ///FILTRO 
        }
     
    </script>
@@ -64,10 +80,6 @@
 
 </head>
 <body>
-
-
- 
-
 
   <nav>
     <!--BARRA DE CAMPANHAS-->
@@ -84,7 +96,7 @@
    
            <div class="col-6">   
             <!--CAMPNHAS-->
-            <h3>Criar Campanha</h3>
+            <h3  style="margin-left: 180px;">Criar Campanha</h3>
    
             <!-- FIM DE CAMPNHAS-->
           </div>
@@ -117,7 +129,7 @@
 
        <!--IMAGEM-->
       <h5>Imagem</h5>
-      <div class="card" style="width: 40rem;"id="img">
+      <div class="card" id="img">
         <form >
           <label for="myfile">Selecionar Aquivo:</label>
           <input type="file" id="myfile" name="myfile" ><br><br>
@@ -158,7 +170,7 @@
     
 <form >
   <div class="mb-3 mt-3">
-    <label for="email" class="form-label">Email:</label>
+    <label for="email" class="form-label"><h5>Email: </h5></label>
     <input type="email" class="form-control" id="email" placeholder="Digite seu Email" name="email" required>
   </div>
   
@@ -166,7 +178,7 @@
 
 <form >
   <div class="mb-3 mt-3">
-    <label for="email" class="form-label">Telefone:</label>
+    <label for="email" class="form-label"><h5>Telefone: </h5></label>
     <input type="Telefone" class="form-control" id="telefone" placeholder=" Digite seu Telefone" name="Telefone" required >
   </div>
 
@@ -193,17 +205,16 @@
   }
 </script>
 
-<label for="Endereço" class="form-label">Endereço:</label>
+<label for="Endereço" class="form-label"><h5>Endereço: </h5></label>
   <input type="text" id="buscarcep" placeholder="Digite seu cep"  name="campo" id="campo" required>
   <button  class="btn " id="criar" type="submit" value="Salvar"  onclick="CEP()"> Buscar</button>
   <div id="resultado"></div>
   <form>
     <div class="mb-3 mt-3">
-      <label for="email" class="form-label">Informações adicionais:</label>
-      <input type="Endereço" class="form-control" id="Endereço" name="Endereço" required >
+      <label for="email" class="form-label"> <h5>Informações adicionais:</h5><label>
+      <input type="Endereço" class="form-control" id="Endereço" name="Endereço"  placeholder=" Digite uma informação adicional do seu endereço"required >
     </div> 
 
- 
 
   <!-- FIM DE ENDEREÇO-->
 
@@ -211,7 +222,7 @@
 </form>
 <br>
 
-   <!--CHECKS-->
+   <!--CHECKS--
    <div class="card checks" style="width: 18rem;" id="cardchecks">
     <div class="form-check">
      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -232,8 +243,15 @@
      </label>
    </div>
      </div>
+      
+     -- FIM DE CHECKS-->
 
-     <!-- FIM DE CHECKS-->
+     <label for="filtro"><h5>Filtro:</h5></label>
+     <select class="card checks" style="width: 18rem;" class="form-check" id="filtro">
+       <option value="brinquedos">Brinquedos</option>
+       <option value="alimentos">Alimentos</option>
+       <option value="roupas">Roupas</option>
+     </select>
     
      <!--BOTÃO DE CRIAR -->
 
@@ -245,8 +263,6 @@
 
         <!--FIM DE BOTÃO DE CRIAR -->
 
-
- 
 </body>
   
 </html>

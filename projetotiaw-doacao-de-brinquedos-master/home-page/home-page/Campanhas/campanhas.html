@@ -9,6 +9,7 @@
     rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
      <!--BOOTSTRAP-->
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="detalhes.html"></script>
@@ -31,7 +32,8 @@
                 <div class="card-body" id="cardcampanha">
                   <h5 class="card-title">${campanhas[i].title}</h5>
                   <p class="card-text">${campanhas[i].comment}</p>
-                  <button type="button" class="btn btn-primary" onclick="detalhes(${i})">Saiba mais</button>
+                  <ul id="listaCampanhas"></ul>
+                  <button type="button" class="btn "  onclick="detalhes(${i})" id="Saiba">Saiba mais</button>
                 </div>
               </div> 
               <!--FIM CARD -->
@@ -73,7 +75,13 @@ document.getElementById('historia').textContent = historia;
         <div class="row">
           <div class="col-3 d-inline-flex justify-content-start">
             <!--LOGO DOADORES-->
-            <img src="logo1.png" alt="Logo" width="40" height="34" class="d-inline-block align-text-top">
+            <a class="btn btn-black" href="../pagina-inicial.html">
+              <i class="bi bi-person-circle"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+              </svg>
+            </a>
             <!--FIM DE LOGO DOADORES-->
           </div>
           <div class="col-6">   
@@ -83,7 +91,7 @@ document.getElementById('historia').textContent = historia;
           </div>
           <div class="col-3 d-inline-flex justify-content-end">
             <!--PERFIL-->
-            <a class="btn btn-black" href="../usuario.html">
+            <a class="btn btn-black" href="../editarPerfil.html">
               <i class="bi bi-person-circle"></i>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -102,7 +110,7 @@ document.getElementById('historia').textContent = historia;
       <div class="row">
         <!--CONTAINER CHECKS-->
         <div class="col-md-3">
-          <!--CHECKS-->
+          <!--CHECKS-
           <div class="card checks" style="width: 18rem;">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -123,7 +131,17 @@ document.getElementById('historia').textContent = historia;
               </label>
             </div>
           </div>
-          <!-- FIM DE CHECKS-->
+          FIM DE CHECKS-->
+
+          <label for="filtroExibicao"><h5>Filtro:</h5></label>
+          <select class="card checks" style="width: 18rem;" class="form-check" id="filtroExibicao" onchange="exibirCampanhas()">
+            <option value="todos">Todos</option>
+            <option value="brinquedos">Brinquedos</option>
+            <option value="alimentos">Alimentos</option>
+            <option value="roupas">Roupas</option>
+          </select>
+
+          <script src="campanhas.js"></script>
           <br>
           <!--CRIAR CAMPANHAS-->
           <div class="card" style="width: 18rem;">

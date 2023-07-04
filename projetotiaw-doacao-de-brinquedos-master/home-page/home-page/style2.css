@@ -34,7 +34,7 @@
   body {
       font-family: Arial, Helvetica, sans-serif;
       margin: 0;
-      background: linear-gradient(320deg,#FFF229, orange, #6BBDD7 );
+      background: linear-gradient(320deg,rgba(51, 180, 180, 0.849),#A66AE2 );
     }
     
     html {
@@ -130,7 +130,7 @@
     font-weight: 600;
   }
   .copyright a {
-    color: #f2ff49;
+    color: #A66AE2;
     margin-left: 3px;
     padding-right: 3px;
   }
@@ -159,7 +159,7 @@
   }
   
   .dropdown-menu {
-    background:linear-gradient(320deg,#FFF229, orange); 
+    background: linear-gradient(320deg,rgba(51, 180, 180, 0.849),#A66AE2 ); 
   }
   
   

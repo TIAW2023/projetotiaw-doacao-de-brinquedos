@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="editar.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Usuario</title>
+</head>
+<body>
+<div class="container">
+    <div class="row profile">
+        <div class="col-md-3">
+            <div class="profile-sidebar">
+               
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name" id="nomeUsuario">
+                        Usuário
+                    </div>
+                </div>
+                <div class="profile-usermenu">
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="editarPerfil.html">
+                            <i class="glyphicon glyphicon-user"></i>
+                            Editar Perfil </a>
+                        </li>
+                        <li>
+                            <a href="gerenciarCam.html">
+                            <i class="glyphicon glyphicon-user"></i>
+                            Gerenciar Campanhas </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="profile-userpic">
+                <input type="file" name="picture__input" id="picture__input" style="display: none;" onchange="exibirFotoSelecionada(event)">
+                <label for="picture__input" id="selecionarFotoButton" style="border-radius: 10px; padding: 5px; cursor: pointer; display: block; width: 100px;background-color:  #5b9bd1;">Selecionar Foto</label>
+                <img id="foto" src="usuario.png" alt="Imagem de Perfil" data-foto="">
+              </div>
+           
+            <div class="input-group">
+                <span class="input-group-text">Modifique o seu nome</span>
+                <input type="text" id="nomeInput" aria-label="First name" placeholder="Nome" class="form-control">
+            </div>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">Altere a sua senha</span>
+                <input type="password" id="senhaInput" class="form-control" placeholder="Senha" aria-label="Username" aria-describedby="addon-wrapping">
+            </div>
+            <button id="salvarButton" class="btn btn-primary">Salvar Alterações</button>
+        </div>
+    </div>
+</div>
+
+<script src="user.js"></script>
+</body>
+</html>
+

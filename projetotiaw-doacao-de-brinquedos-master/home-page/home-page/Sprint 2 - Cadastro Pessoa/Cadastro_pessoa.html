@@ -7,20 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Cadastro</title>
+    <script src="pessoa.js"></script>
 </head>
 
 <body>
-    <div class="box">
+    <div class="box" id="#formCadastro">
         <div class="img-box">
             <img src="image.jpg">
         </div>
         <div class="form-box">
-            <h2>Criar Conta — (Pessoa) </h2>
-
+            <h2>Criar Conta - Pessoa</h2>
             <form action="#">
                 <div class="input-group">
                     <label for="nome"> Nome Completo</label>
-                    <input type="text" id="nome" placeholder="Digite o seu nome completo" required>
+                    <input type="text" id="nome" placeholder="Digite o seu nome completo" minlength="3" required>
                 </div>
                 
 
@@ -31,21 +31,27 @@
 
                 <div class="input-group ">
                     <label for="senha">Senha</label>
-                    <input type="password" id="senha" placeholder="Digite sua senha" required>
+                    <input type="password" id="senha" placeholder="Digite sua senha" minlength="3" required>
                 </div>
-
-                <div class="input-group ">
-                    <label for="Confirmarsenha">Confirmar Senha</label>
-                    <input type="password" id="Confirmarsenha" placeholder="Confirme a senha" required>
-                </div>
-                <br><br></br>
 
                 <div class="input-group">
-                    <button>Cadastrar</button>
+                    <button onclick="cadastrar()">Cadastrar</button>
                 </div>
 
             </form>
         </div>
     </div>
 </body>
-</html>
+<script src="pessoa.js"></script></html>
+
+<!-- <script>
+    function criar(){
+  var objDados = localStorage.getItem ('dbInstituicao');
+  instituicao = JSON.parse(objDados);
+// var intituicao = localStorage.getItem("instituicao");
+var instituicaoArray =  [];
+instituicaoArray.push({ nome: nome, email: email, cnpj: cnpj, telefone: telefone, senha: senha});
+localStorage.setItem("instituicao", JSON.stringify(instituicaoArray));
+}
+  
+</script> -->
